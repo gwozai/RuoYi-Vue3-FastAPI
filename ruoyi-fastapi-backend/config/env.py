@@ -222,8 +222,8 @@ class GetConfig:
             # 使用argparse定义命令行参数
             parser = argparse.ArgumentParser(description='命令行参数')
             parser.add_argument('--env', type=str, default='', help='运行环境')
-            # 解析命令行参数
-            args = parser.parse_args()
+            # 解析命令行参数（使用 parse_known_args 忽略未知参数，支持脚本工具）
+            args, _ = parser.parse_known_args()
             # 设置环境变量，如果未设置命令行参数，默认APP_ENV为dev
             os.environ['APP_ENV'] = args.env if args.env else 'dev'
         # 读取运行环境

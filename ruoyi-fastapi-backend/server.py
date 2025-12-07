@@ -22,6 +22,15 @@ from module_admin.controller.post_controler import postController
 from module_admin.controller.role_controller import roleController
 from module_admin.controller.server_controller import serverController
 from module_admin.controller.user_controller import userController
+from module_admin.controller.book_controller import bookController
+from module_admin.controller.audio_controller import audioController
+from module_admin.controller.ttsConfig_controller import ttsConfigController
+from module_admin.controller.notify_platform_controller import notifyPlatformController
+from module_admin.controller.notify_channel_controller import notifyChannelController
+from module_admin.controller.notify_key_controller import notifyKeyController
+from module_admin.controller.notify_log_controller import notifyLogController
+from module_admin.controller.notify_send_controller import notifySendController
+from module_admin.system.controller.student_controller import studentController
 from module_generator.controller.gen_controller import genController
 from sub_applications.handle import handle_sub_applications
 from utils.common_util import worship
@@ -79,6 +88,15 @@ controller_list = [
     {'router': cacheController, 'tags': ['系统监控-缓存监控']},
     {'router': commonController, 'tags': ['通用模块']},
     {'router': genController, 'tags': ['代码生成']},
+    {'router': bookController, 'tags': ['系统管理-图书管理']},
+    {'router': audioController, 'tags': ['系统管理-音频生成']},
+    {'router': ttsConfigController, 'tags': ['系统管理-TTS配置']},
+    {'router': studentController, 'tags': ['学生管理-学生信息']},
+    {'router': notifyPlatformController, 'tags': ['通知服务-通知平台']},
+    {'router': notifyChannelController, 'tags': ['通知服务-通知渠道']},
+    {'router': notifyKeyController, 'tags': ['通知服务-API密钥']},
+    {'router': notifyLogController, 'tags': ['通知服务-发送记录']},
+    {'router': notifySendController, 'tags': ['通知服务-发送通知']},
 ]
 
 for controller in controller_list:
